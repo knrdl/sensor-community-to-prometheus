@@ -22,7 +22,7 @@ def generate(sensors: list[str]) -> str:
         SELECT time, last("{sensor_type}_P0") AS "{sensor_type}_pm1"
         FROM "autogen"."sensors" WHERE ({node_query} AND "type" = '{sensor_type}') group by node;
 
-        SELECT time, last("{sensor_type}_P2") AS "{sensor_type}_pm2.5" 
+        SELECT time, last("{sensor_type}_P2") AS "{sensor_type}_pm2_5" 
         FROM "autogen"."sensors" WHERE ({node_query} AND "type" = '{sensor_type}') group by node;
 
         SELECT time, last("{sensor_type}_P1") AS "{sensor_type}_pm10" 
